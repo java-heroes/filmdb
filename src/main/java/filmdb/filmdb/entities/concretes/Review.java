@@ -11,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 import filmdb.filmdb.core.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +25,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "reviews")
+
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","movie"})
+
 public class Review { //reviews = yorumlar
 
 	@Id
